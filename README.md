@@ -49,6 +49,7 @@ The associated JSON configuration file is `cssjs-minify-default.json`:
 
 ```
 {
+    "verbose": true,
     "api": {
         "cssmin": "https://www.toptal.com/developers/cssminifier/raw",
         "jsmin": "https://www.toptal.com/developers/javascript-minifier/api/raw"
@@ -96,6 +97,7 @@ The associated JSON configuration file is `cssjs-minify-minprep.json`:
 
 ```
 {
+    "verbose": true,
     "api": {
         "cssmin": "https://www.toptal.com/developers/cssminifier/raw",
         "jsmin": "https://www.toptal.com/developers/javascript-minifier/api/raw"
@@ -128,6 +130,7 @@ The associated JSON configuration file is `cssjs-minify-fullmin.json`:
 
 ```
 {
+    "verbose": true,
     "api": {
         "cssmin": "https://www.toptal.com/developers/cssminifier/raw",
         "jsmin": "https://www.toptal.com/developers/javascript-minifier/api/raw"
@@ -200,5 +203,30 @@ Preparation Complete.
 Minification Complete.
 ```
 
+## Silent Running
+
+In any of the JSON configuration files find `"verbose": true` and change it to `false`. The only console output will be error messages or "usage" messages. The application will exit after displaying run-time error messages.
+
+### Error Messages
+
+**`cssjs-minify.php`**:
+
+* `ERROR missing file: cssjs-minify-[default|minprep|fullmin].json` - Indicates that the JSON configuration file that should match the argument choice is missing.
+* `ERROR ["minpreprun[0]""minpreprun[1]"] does not exist` - Can only occur in [FullMin Mode](#fullmin-mode). The file specified could not be found.
+* `ERROR invalid minpreprun  - ["minpreprun[0]""minpreprun[n]"]` - Can only occur in [FullMin Mode](#fullmin-mode). The array `"minpreprun"` in `cssjs-minify-fullmin.json` is incorrect. It must only have 2 items. Item 0 is the path to where `minimize-prep` is installed and item 1 is always `minprep.php`.
+
+The following errors will not halt the application:
+
+* `ERROR [file.css|file.js] does not exist, skipping.` - Only seen in [Default Mode](#default-mode). It indicates one of the files listed could not be found.
+* `ERROR minifiying [file.css|file.js] - [HTTP Status]` - An error has occurred with the Toptal API. And `[HTTP Status]` will be the HTTP error code and message. A partial list of errors can be seen here in [Toptal Documentation](<https://www.toptal.com/developers/javascript-minifier/documentation>)(*at the bottom of the page*).
+
+**`prepmin.php`**: Only in [MinPrep Mode](#minprep-mode) or [FullMin Mode](#fullmin-mode) - 
+
+* `ERROR ["minprepcfg"] does not exist!` - Where `"minprepcfg"` is found in the JSON configuration files but the file specified could not be found.
+* `ERROR [concatenated.css|concatenated.js] does not exist!` - The concatenated resource file (*css or js*) could not be found.
+
+The following errors will not halt the application:
+
+* `ERROR minifiying [file.css|file.js] - [HTTP Status]` - An error has occurred with the Toptal API. And `[HTTP Status]` will be the HTTP error code and message. A partial list of errors can be seen here in [Toptal Documentation](<https://www.toptal.com/developers/javascript-minifier/documentation>)(*at the bottom of the page*).
 
 
