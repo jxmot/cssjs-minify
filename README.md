@@ -35,7 +35,6 @@ So far I have not encountered any errors or problems with the minified output fr
 **Usage:**
 **`php cssjs-minify.php [default|minprep|fullmin]`**
 
-
 Where:
 
 * **`default`** - Iterate through a static list (*see [Default Mode](#default-mode)*) of CSS and JavaScript files. A new minified file will be created in the same location, and using the same name as the input file. 
@@ -143,6 +142,8 @@ In this mode some *assumptions* are made:
 * [minimize-prep](https://github.com/jxmot/minimize-prep#readme) has been installed in a *sibling* folder to the folder where this utility has been installed.
 * minimize-prep has been **not** been run yet.
 
+In this mode the `minimize-prep` utility will be ran for you. After it has completed the resulting files will be minified.
+
 **Output Example:**
 
 ```
@@ -200,5 +201,4 @@ Minification Complete.
 ```
 
 
----
-<img src="http://webexperiment.info/extcounter/mdcount.php?id=cssjs- minify">
+
