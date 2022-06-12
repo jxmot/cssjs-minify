@@ -5,6 +5,6 @@
     },
     "minprepcfg": null,
     "_comment": "no wildcards, paths can be relative or absolute.",
-    "cssin": ["css/example_1.css","css/example_2.css","css/example_3.css","css/example_4.css"],
+    "cssin": ["css/example_1.css","css/bad_example.css", "css/example_2.css","css/example_3.css","css/example_4.css"],
     "jsin": ["js/example_1.js","js/example_2.js","js/example_3.js","js/example_4.js"]
 }
