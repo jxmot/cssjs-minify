@@ -1,0 +1,7 @@
+{
+    "api": {
+        "cssmin": "https://www.toptal.com/developers/cssminifier/raw",
+        "jsmin": "https://www.toptal.com/developers/javascript-minifier/api/raw"
+    },
+    "minprepcfg": "../minprep/minprep.json"
+}
