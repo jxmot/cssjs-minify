@@ -6,6 +6,10 @@ Is this just another CSS and JS minification tool? Well, yes and no. This utilit
 * Can work in conjunction with [minimize-prep](https://github.com/jxmot/minimize-prep#readme). Where **minimize-prep** is another utility that reads HTML files and creates concatenated CSS and JS files from the `<link>` and `<script>` tags it finds.
 * Can operate independently with individual CSS and JS files.
 
+## Requirements
+
+* PHP >= 5.6
+
 ## Minification API
 
 The API I am using comes from the nice folks at [Toptal](https://www.toptal.com). There are two endpoints, one for CSS and another for JavaScript.
@@ -159,13 +163,6 @@ Files Root Path: ../../public_html/
 
 Excluded - <link rel="stylesheet" href="./assets/css/octicons-3.5.0/octicons.css"/>
 Excluded - <link rel="stylesheet" href="./assets/css/site.min.css">
-Found - ./assets/css/reseter.css
-Found - ./assets/css/nobs-palettes.css
-Found - ./assets/css/nobs-default.css
-Found - ./assets/css/splash.css
-Found - ./assets/css/nobs.css
-Found - ./assets/css/nobs-totop.css
-Found - ./assets/css/nobs-contact.css
 Found - ./assets/css/aboutme.css
 Found - ./assets/css/workhist.css
 Found - ./assets/css/prehist.css
@@ -173,20 +170,11 @@ Found - ./assets/css/patents.css
 Found - ./assets/css/projects.css
 Found - ./assets/css/repoviews.css
 Found - ./assets/css/footer.css
-Found - ./assets/css/github-feed-dark.css
-Found - ./assets/css/github-feed.css
 Found - ./assets/css/animate.css
 Excluded - <script src="./assets/jq/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 Excluded - <script src="https://www.google.com/recaptcha/api.js"></script>
 Excluded - <script src="./assets/js/showdown-2.1.0/dist/showdown.js"></script>
 Excluded - <script src="./assets/js/site.min.js"></script>
-Found - ./assets/js/utils.js
-Found - ./assets/js/statusmsg.js
-Found - ./assets/js/thankyou.js
-Found - ./assets/js/nobs.js
-Found - ./assets/js/nobs-contact.js
-Found - ./assets/js/totop.js
-Found - ./assets/js/github-feed.js
 Found - ./assets/js/elemtotop.js
 Found - ./assets/js/technologies.js
 Found - ./assets/js/projects.js
@@ -230,3 +218,5 @@ The following errors will not halt the application:
 * `ERROR minifiying [file.css|file.js] - [HTTP Status]` - An error has occurred with the Toptal API. And `[HTTP Status]` will be the HTTP error code and message. A partial list of errors can be seen here in [Toptal Documentation](<https://www.toptal.com/developers/javascript-minifier/documentation>)(*at the bottom of the page*).
 
 
+---
+<img src="http://webexperiment.info/extcounter/mdcount.php?id=cssjs-minify">
