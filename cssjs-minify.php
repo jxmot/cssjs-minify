@@ -55,6 +55,10 @@ if($minifycfg->minprepcfg !== null) {
         require_once 'prepmin.php';
     } else {
         if(count($minifycfg->minpreprun) === 2) {
+            // we're going to run the script from 
+            // within the folder where it's contained.
+            // this will help insure that the paths 
+            // are correct.
             $cwd = getcwd();
             if(is_dir($minifycfg->minpreprun[0])) {
                 chdir($minifycfg->minpreprun[0]);
